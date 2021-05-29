@@ -136,12 +136,22 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  ShoeDetails(shoeData: shoeCardData[index]),
-                            ),
+                          Navigator.of(context).push(
+                            PageRouteBuilder<Null>(
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation) {
+                                  return AnimatedBuilder(
+                                    animation: animation,
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return ShoeDetails(
+                                          shoeData: shoeCardData[index]);
+                                    },
+                                  );
+                                },
+                                transitionDuration:
+                                    Duration(milliseconds: 600)),
                           );
                         },
                         child: HorizontalScrollCards(
