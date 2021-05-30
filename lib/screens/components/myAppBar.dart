@@ -6,7 +6,8 @@ class MyAppBar extends StatelessWidget {
   final IconData icon;
   final bool leading;
   final String title;
-  MyAppBar({this.icon, this.leading = false, this.title});
+  final Function onMenuTap;
+  MyAppBar({this.icon, this.leading = false, this.title, this.onMenuTap});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,11 +24,11 @@ class MyAppBar extends StatelessWidget {
                     icon,
                     size: 34,
                   ),
-            onPressed: () {
-              if (leading == true) {
-                Navigator.pop(context);
-              }
-            },
+            onPressed: leading == false
+                ? onMenuTap
+                : () {
+                    Navigator.pop(context);
+                  },
           ),
           SizedBox(
             width: 20,

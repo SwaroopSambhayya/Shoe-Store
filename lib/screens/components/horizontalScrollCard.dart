@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shoe_market/constants.dart';
-import 'dart:math';
 
 class HorizontalScrollCards extends StatelessWidget {
   final shoeDetails;

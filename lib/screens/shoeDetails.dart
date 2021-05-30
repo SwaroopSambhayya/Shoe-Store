@@ -1,6 +1,5 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shoe_market/constants.dart';
 import 'package:shoe_market/screens/components/horizontalCard.dart';
 import 'package:shoe_market/screens/components/myAppBar.dart';

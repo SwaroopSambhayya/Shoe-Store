@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   eva_icons_flutter: ^3.0.0
+  flutter_inner_drawer: "^1.0.0+1"
 
 dev_dependencies:
   flutter_test:
