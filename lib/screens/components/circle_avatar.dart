@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class CircleProfile extends StatelessWidget {
   final double margin;
   final String imageUrl;
-  CircleProfile({this.margin = 15, this.imageUrl = ""});
+  const CircleProfile({this.margin = 15, this.imageUrl = ''});
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(margin),
-      padding: EdgeInsets.all(1),
+      padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
         color: Colors.redAccent.withOpacity(0.6),
-        borderRadius: BorderRadius.all(Radius.circular(50)),
+        borderRadius: const BorderRadius.all(Radius.circular(50)),
         boxShadow: [
           BoxShadow(
               color: Colors.deepOrange.withOpacity(0.15),
-              offset: Offset(2, 8),
+              offset: const Offset(2, 8),
               blurRadius: 25)
         ],
       ),
@@ -30,7 +30,7 @@ class CircleProfile extends StatelessWidget {
                   height: 90,
                   fit: BoxFit.cover,
                 )
-              : SizedBox(),
+              : const SizedBox(),
         ),
       ),
     );

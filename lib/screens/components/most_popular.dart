@@ -4,7 +4,7 @@ class MostPopularListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15),
+      margin: const EdgeInsets.only(left: 15, right: 15),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -12,12 +12,12 @@ class MostPopularListTile extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.10),
               blurRadius: 20,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             )
           ]),
       child: ListTile(
         //isThreeLine: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 12),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12),
         leading: Container(
           width: 55,
           height: 55,
@@ -26,38 +26,38 @@ class MostPopularListTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: Image.asset(
-            "assets/images/shoe.png",
+            'assets/images/shoe.png',
             fit: BoxFit.contain,
           ),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
-              "Air Jordan 1 Mid",
+              'Air Jordan 1 Mid',
               style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  fontFamily: "Poppins"),
+                  fontFamily: 'Poppins'),
             ),
             Text(
-              "NIKE",
+              'NIKE',
               style: TextStyle(
-                  fontSize: 12, fontFamily: "Poppins", color: Colors.grey),
+                  fontSize: 12, fontFamily: 'Poppins', color: Colors.grey),
             ),
           ],
         ),
         subtitle: Row(
           children: [
-            Text(
-              "₹80.00",
+            const Text(
+              '₹80.00',
               style: TextStyle(
                   color: Colors.grey,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
-                  fontFamily: "Poppins"),
+                  fontFamily: 'Poppins'),
             ),
-            SizedBox(
+            const SizedBox(
               width: 2,
             ),
             Row(
@@ -67,11 +67,11 @@ class MostPopularListTile extends StatelessWidget {
                   color: Colors.yellow[600],
                   size: 20,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 2,
                 ),
-                Text(
-                  "(5.0)",
+                const Text(
+                  '(5.0)',
                   style: TextStyle(fontSize: 13, color: Colors.grey),
                 )
               ],
@@ -84,7 +84,7 @@ class MostPopularListTile extends StatelessWidget {
           child: IconButton(
             color: Colors.yellow,
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.add,
               size: 22,
             ),

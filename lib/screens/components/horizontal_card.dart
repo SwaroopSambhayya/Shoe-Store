@@ -4,21 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:shoe_market/constants.dart';
 
 class HorizontalCard extends StatelessWidget {
-  final shoeDetails;
-  HorizontalCard({this.shoeDetails});
+  final Map<String, dynamic> shoeDetails;
+  const HorizontalCard({this.shoeDetails});
   @override
   Widget build(BuildContext context) {
     Color checkColor(String color) {
-      if (color == "red") {
+      if (color == 'red') {
         return Colors.red[100];
       }
-      if (color == "blue") {
+      if (color == 'blue') {
         return Colors.blue[100];
       }
-      if (color == "orange") {
+      if (color == 'orange') {
         return Colors.orange[100];
       }
-      if (color == "green") {
+      if (color == 'green') {
         return Colors.green[100];
       }
       return Colors.white;
@@ -27,7 +27,7 @@ class HorizontalCard extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.55,
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 13,
         top: 10,
         right: 13,
@@ -40,7 +40,7 @@ class HorizontalCard extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.46,
               width: MediaQuery.of(context).size.width * 0.85,
-              padding: EdgeInsets.only(bottom: 20, left: 10, right: 10),
+              padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -48,7 +48,7 @@ class HorizontalCard extends StatelessWidget {
                   BoxShadow(
                     color: Colors.black.withOpacity(0.08),
                     blurRadius: 25,
-                    offset: Offset(0, 5),
+                    offset: const Offset(0, 5),
                   )
                 ],
               ),
@@ -60,7 +60,7 @@ class HorizontalCard extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.75,
-                      margin: EdgeInsets.only(top: 30),
+                      margin: const EdgeInsets.only(top: 30),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,9 +69,9 @@ class HorizontalCard extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
-                                shoeDetails["shoeName"],
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
+                                shoeDetails['shoeName'],
+                                style: const TextStyle(
+                                  fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w600,
                                   fontSize: 22,
                                 ),
@@ -81,7 +81,7 @@ class HorizontalCard extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 primary: Colors.black,
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 25, right: 25, top: 15, bottom: 15),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -89,9 +89,9 @@ class HorizontalCard extends StatelessWidget {
                                 elevation: 5),
                             onPressed: () {},
                             child: Text(
-                              "₹" + shoeDetails["shoePrice"],
-                              style: TextStyle(
-                                  fontFamily: "Poppins",
+                              '₹' + shoeDetails['shoePrice'],
+                              style: const TextStyle(
+                                  fontFamily: 'Poppins',
                                   color: primaryColor,
                                   fontSize: 13),
                             ),
@@ -100,12 +100,12 @@ class HorizontalCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Container(
+                    child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.75,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,34 +114,34 @@ class HorizontalCard extends StatelessWidget {
                             child: Row(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(2),
+                                  padding: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(color: Colors.black),
                                   ),
-                                  child: CircleAvatar(
+                                  child: const CircleAvatar(
                                     radius: 18,
                                     backgroundColor: Colors.redAccent,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 CircleAvatar(
                                   radius: 18,
                                   backgroundColor: Colors.green[200],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 CircleAvatar(
                                   radius: 18,
                                   backgroundColor: Colors.blue[200],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
-                                CircleAvatar(
+                                const CircleAvatar(
                                   radius: 18,
                                   backgroundColor: Colors.orangeAccent,
                                 )
@@ -149,12 +149,12 @@ class HorizontalCard extends StatelessWidget {
                             ),
                           ),
                           Row(
-                            children: [
+                            children: const [
                               Text(
-                                "Size:",
+                                'Size:',
                                 style: TextStyle(
                                     color: Colors.grey,
-                                    fontFamily: "Poppins",
+                                    fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w600),
                               ),
                               SizedBox(
@@ -163,10 +163,10 @@ class HorizontalCard extends StatelessWidget {
                               CircleAvatar(
                                 backgroundColor: Colors.black,
                                 child: Text(
-                                  "9",
+                                  '9',
                                   style: TextStyle(
                                     color: primaryColor,
-                                    fontFamily: "Poppins",
+                                    fontFamily: 'Poppins',
                                     fontSize: 13,
                                   ),
                                 ),
@@ -188,7 +188,7 @@ class HorizontalCard extends StatelessWidget {
               //width: 200,
               height: MediaQuery.of(context).size.height * 0.35,
               decoration: BoxDecoration(
-                color: checkColor(shoeDetails["color"]),
+                color: checkColor(shoeDetails['color']),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Stack(
@@ -199,9 +199,9 @@ class HorizontalCard extends StatelessWidget {
                     left: 0,
                     right: 0,
                     child: Hero(
-                      tag: shoeDetails["shoeLink"],
+                      tag: shoeDetails['shoeLink'],
                       child: Image.asset(
-                        shoeDetails["shoeLink"],
+                        shoeDetails['shoeLink'],
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -216,7 +216,7 @@ class HorizontalCard extends StatelessWidget {
                             BoxShadow(
                               color: Colors.red.withOpacity(0.3),
                               blurRadius: 20,
-                              offset: Offset(0, 5),
+                              offset: const Offset(0, 5),
                             ),
                           ],
                         ),

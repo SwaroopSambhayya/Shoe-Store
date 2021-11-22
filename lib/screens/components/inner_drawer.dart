@@ -1,14 +1,14 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_drawer/inner_drawer.dart';
-import 'package:shoe_market/screens/components/circleAvatar.dart';
+import 'package:shoe_market/screens/components/circle_avatar.dart';
 
-import 'myIcon.dart';
+import 'my_icon.dart';
 
 class MyDrawer extends StatefulWidget {
   final Widget scaffold;
   final GlobalKey<InnerDrawerState> innerDrawerKey;
-  MyDrawer({this.scaffold, this.innerDrawerKey});
+  const MyDrawer({this.scaffold, this.innerDrawerKey});
 
   @override
   _MyDrawerState createState() => _MyDrawerState();
@@ -24,12 +24,12 @@ class _MyDrawerState extends State<MyDrawer> {
         BoxShadow(
           color: Colors.black.withOpacity(0.08),
           blurRadius: 20,
-          offset: Offset(-5, 10),
+          offset: const Offset(-5, 10),
         ),
         BoxShadow(
           color: Colors.black.withOpacity(0.08),
           blurRadius: 20,
-          offset: Offset(10, 0),
+          offset: const Offset(10, 0),
         )
       ],
       onTapClose: true, // default false
@@ -38,15 +38,16 @@ class _MyDrawerState extends State<MyDrawer> {
       colorTransitionScaffold: Colors.transparent, // default Color.black54
 
       //When setting the vertical offset, be sure to use only top or bottom
-      offset: IDOffset.only(bottom: 0.05, right: 0.0, left: 0.0),
+      offset: const IDOffset.only(bottom: 0.05, right: 0.0, left: 0.0),
 
-      scale: IDOffset.horizontal(0.8), // set the offset in both directions
+      scale:
+          const IDOffset.horizontal(0.8), // set the offset in both directions
 
       proportionalChildArea: true, // default true
       borderRadius: 40, // default 0
       leftAnimationType: InnerDrawerAnimation.static, // default static
       rightAnimationType: InnerDrawerAnimation.quadratic,
-      backgroundDecoration: BoxDecoration(
+      backgroundDecoration: const BoxDecoration(
           color: Colors.white), // default  Theme.of(context).backgroundColor
 
       //when a pointer that is in contact with the screen and moves to the right or left
@@ -63,7 +64,7 @@ class _MyDrawerState extends State<MyDrawer> {
         color: Colors.white,
         child: SafeArea(
           child: Container(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             child: Column(
               children: [
                 Align(
@@ -79,7 +80,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         ]),
                     child: IconButton(
                       iconSize: 20,
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.close,
                         size: 20,
                       ),
@@ -89,73 +90,73 @@ class _MyDrawerState extends State<MyDrawer> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                CircleProfile(
-                  imageUrl: "profile",
+                const CircleProfile(
+                  imageUrl: 'profile',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  "Kelly",
+                const Text(
+                  'Kelly',
                   style: TextStyle(
-                      fontFamily: "Poppins",
+                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                       fontSize: 16),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ListTile(
-                      contentPadding: EdgeInsets.all(0),
+                      contentPadding: const EdgeInsets.all(0),
                       leading: Icon(
                         MyIcon.home_1,
                         color: Colors.black.withOpacity(0.75),
                       ),
-                      title: Text(
-                        "Home",
+                      title: const Text(
+                        'Home',
                         style: TextStyle(
-                            fontFamily: "Poppins",
+                            fontFamily: 'Poppins',
                             color: Colors.deepOrangeAccent,
                             fontSize: 14),
                       ),
                     ),
                     ListTile(
-                      contentPadding: EdgeInsets.all(0),
+                      contentPadding: const EdgeInsets.all(0),
                       leading: Icon(
                         MyIcon.notification,
                         color: Colors.black.withOpacity(0.75),
                       ),
-                      title: Text(
-                        "Notifications",
-                        style: TextStyle(fontFamily: "Poppins", fontSize: 14),
+                      title: const Text(
+                        'Notifications',
+                        style: TextStyle(fontFamily: 'Poppins', fontSize: 14),
                       ),
                     ),
                     ListTile(
-                      contentPadding: EdgeInsets.all(0),
+                      contentPadding: const EdgeInsets.all(0),
                       leading: Icon(
                         MyIcon.heart_6,
                         color: Colors.black.withOpacity(0.75),
                       ),
-                      title: Text(
-                        "Favorites",
-                        style: TextStyle(fontFamily: "Poppins", fontSize: 14),
+                      title: const Text(
+                        'Favorites',
+                        style: TextStyle(fontFamily: 'Poppins', fontSize: 14),
                       ),
                     ),
                     ListTile(
-                      contentPadding: EdgeInsets.all(0),
+                      contentPadding: const EdgeInsets.all(0),
                       leading: Icon(
                         EvaIcons.logOut,
                         color: Colors.black.withOpacity(0.75),
                       ),
-                      title: Text(
-                        "Sign out",
-                        style: TextStyle(fontFamily: "Poppins", fontSize: 14),
+                      title: const Text(
+                        'Sign out',
+                        style: TextStyle(fontFamily: 'Poppins', fontSize: 14),
                       ),
                     )
                   ],

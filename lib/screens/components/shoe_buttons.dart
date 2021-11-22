@@ -4,12 +4,12 @@ import 'package:shoe_market/constants.dart';
 class ShoeButton extends StatelessWidget {
   final String shoeType;
   final String shoeImage;
-  ShoeButton({this.shoeType, this.shoeImage});
+  const ShoeButton({this.shoeType, this.shoeImage});
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 5),
-      margin: EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       height: 55,
       decoration: BoxDecoration(
           color: Colors.black,
@@ -18,7 +18,7 @@ class ShoeButton extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.10),
               blurRadius: 20,
-              offset: Offset(0, 0),
+              offset: const Offset(0, 0),
             )
           ]),
       child: Row(
@@ -26,7 +26,8 @@ class ShoeButton extends StatelessWidget {
           Container(
             height: 40,
             width: 40,
-            margin: EdgeInsets.only(left: 6, right: 10, top: 4, bottom: 4),
+            margin:
+                const EdgeInsets.only(left: 6, right: 10, top: 4, bottom: 4),
             decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
@@ -41,14 +42,14 @@ class ShoeButton extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Text(
             shoeType,
-            style: TextStyle(color: primaryColor, fontFamily: "Poppins"),
+            style: const TextStyle(color: primaryColor, fontFamily: 'Poppins'),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           )
         ],

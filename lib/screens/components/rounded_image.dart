@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RoundedImage extends StatelessWidget {
   final String shoeImage;
-  RoundedImage({this.shoeImage});
+  const RoundedImage({this.shoeImage});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +15,7 @@ class RoundedImage extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.08),
             blurRadius: 10,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           )
         ],
       ),

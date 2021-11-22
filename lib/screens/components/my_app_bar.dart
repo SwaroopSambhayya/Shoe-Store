@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:shoe_market/constants.dart';
-import 'package:shoe_market/screens/components/myIcon.dart';
+import 'package:shoe_market/screens/components/my_icon.dart';
 
 class MyAppBar extends StatelessWidget {
   final IconData icon;
   final bool leading;
   final String title;
   final Function onMenuTap;
-  MyAppBar({this.icon, this.leading = false, this.title, this.onMenuTap});
+  const MyAppBar({this.icon, this.leading = false, this.title, this.onMenuTap});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Row(
         children: [
@@ -30,7 +30,7 @@ class MyAppBar extends StatelessWidget {
                     Navigator.pop(context);
                   },
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Expanded(
@@ -38,13 +38,13 @@ class MyAppBar extends StatelessWidget {
               title,
               style: TextStyle(
                   fontSize: leading == true ? 22 : 18,
-                  fontFamily: "Poppins",
+                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600),
             ),
           ),
           IconButton(
             icon: Stack(
-              children: [
+              children: const [
                 Icon(
                   MyIcon.bag_1,
                 ),
@@ -55,9 +55,9 @@ class MyAppBar extends StatelessWidget {
                     backgroundColor: Colors.black,
                     radius: 7,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 1),
+                      padding: EdgeInsets.only(left: 1),
                       child: Text(
-                        "3",
+                        '3',
                         style: TextStyle(
                             color: primaryColor,
                             fontSize: 9,

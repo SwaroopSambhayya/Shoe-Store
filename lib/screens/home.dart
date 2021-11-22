@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inner_drawer/inner_drawer.dart';
 
 import 'package:shoe_market/constants.dart';
-import 'package:shoe_market/screens/components/horizontalScrollCard.dart';
-import 'package:shoe_market/screens/components/innerDrawer.dart';
-import 'package:shoe_market/screens/components/mostpopular.dart';
+import 'package:shoe_market/screens/components/horizontal_scroll_card.dart';
+import 'package:shoe_market/screens/components/inner_drawer.dart';
+import 'package:shoe_market/screens/components/most_popular.dart';
 
-import 'package:shoe_market/screens/components/myIcon.dart';
-import 'package:shoe_market/screens/components/roundedImage.dart';
-import 'package:shoe_market/screens/components/shoeButtons.dart';
-import 'package:shoe_market/screens/shoeDetails.dart';
+import 'package:shoe_market/screens/components/my_icon.dart';
+import 'package:shoe_market/screens/components/rounded_image.dart';
+import 'package:shoe_market/screens/components/shoe_buttons.dart';
+import 'package:shoe_market/screens/shoe_details.dart';
 
-import 'components/myAppBar.dart';
+import 'components/my_app_bar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
             scaffold: AnnotatedRegion(
               value: overlayValue,
               child: Scaffold(
-                backgroundColor: Color(0xffFAFAFA),
+                backgroundColor: const Color(0xffFAFAFA),
                 extendBodyBehindAppBar: true,
                 //bottomNavigationBar: MyBottomBar(),
 
@@ -41,45 +41,45 @@ class _HomeState extends State<Home> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         MyAppBar(
                           icon: MyIcon.menu,
-                          title: "Shoe Market",
+                          title: 'Shoe Market',
                           onMenuTap: () {
                             _innerDrawerKey.currentState.toggle();
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 18, right: 10),
+                          margin: const EdgeInsets.only(left: 18, right: 10),
                           child: Row(
                             children: [
                               Expanded(
                                 child: TextField(
-                                  style: TextStyle(fontFamily: "Poppins"),
+                                  style: const TextStyle(fontFamily: 'Poppins'),
                                   decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.all(15),
+                                    contentPadding: const EdgeInsets.all(15),
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[100],
-                                    hintText: "Search",
-                                    hintStyle: TextStyle(
-                                      fontFamily: "Poppins",
+                                    hintText: 'Search',
+                                    hintStyle: const TextStyle(
+                                      fontFamily: 'Poppins',
                                     ),
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       MyIcon.search_5,
                                       size: 18,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Container(
@@ -90,11 +90,11 @@ class _HomeState extends State<Home> {
                                       BoxShadow(
                                         color: Colors.black.withOpacity(0.15),
                                         blurRadius: 20,
-                                        offset: Offset(0, 15),
+                                        offset: const Offset(0, 15),
                                       ),
                                     ]),
                                 child: IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       MyIcon.filter,
                                       color: primaryColor,
                                     ),
@@ -103,12 +103,13 @@ class _HomeState extends State<Home> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         Container(
                           height: 70,
-                          margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                          margin: const EdgeInsets.only(
+                              left: 10, right: 10, top: 10),
                           child: ListView.builder(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
@@ -117,9 +118,9 @@ class _HomeState extends State<Home> {
                                   ? Padding(
                                       padding: const EdgeInsets.all(6.0),
                                       child: ShoeButton(
-                                        shoeType: shoeTypes[index]["shoeType"],
+                                        shoeType: shoeTypes[index]['shoeType'],
                                         shoeImage: shoeTypes[index]
-                                            ["imageLink"],
+                                            ['imageLink'],
                                       ),
                                     )
                                   : InkWell(
@@ -133,7 +134,7 @@ class _HomeState extends State<Home> {
                                             const EdgeInsets.only(left: 20.0),
                                         child: RoundedImage(
                                           shoeImage: shoeTypes[index]
-                                              ["imageLink"],
+                                              ['imageLink'],
                                         ),
                                       ),
                                     );
@@ -141,10 +142,10 @@ class _HomeState extends State<Home> {
                             itemCount: shoeTypes.length,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Container(
+                        SizedBox(
                           height: 370,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -152,7 +153,7 @@ class _HomeState extends State<Home> {
                               return InkWell(
                                 onTap: () {
                                   Navigator.of(context).push(
-                                    PageRouteBuilder<Null>(
+                                    PageRouteBuilder<void>(
                                         pageBuilder: (BuildContext context,
                                             Animation<double> animation,
                                             Animation<double>
@@ -168,7 +169,7 @@ class _HomeState extends State<Home> {
                                           );
                                         },
                                         transitionDuration:
-                                            Duration(milliseconds: 600)),
+                                            const Duration(milliseconds: 600)),
                                   );
                                 },
                                 child: HorizontalScrollCards(
@@ -180,33 +181,33 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20),
+                          margin: const EdgeInsets.only(left: 20, right: 20),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
-                                "Most Popular",
+                                'Most Popular',
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: "Poppins"),
+                                    fontFamily: 'Poppins'),
                               ),
                               Text(
-                                "View All",
+                                'View All',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
-                                    fontFamily: "Poppins",
+                                    fontFamily: 'Poppins',
                                     decoration: TextDecoration.underline),
                               )
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         MostPopularListTile(),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                       ],

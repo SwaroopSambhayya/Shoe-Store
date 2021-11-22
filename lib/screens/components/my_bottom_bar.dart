@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoe_market/constants.dart';
-import 'package:shoe_market/screens/components/myIcon.dart';
+import 'package:shoe_market/screens/components/my_icon.dart';
 
 class MyBottomBar extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class MyBottomBar extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.08),
               blurRadius: 20,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             )
           ]),
       child: Row(
